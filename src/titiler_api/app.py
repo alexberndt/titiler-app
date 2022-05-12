@@ -10,11 +10,12 @@ app_host = str(os.environ["APP_HOST"])
 app_port = int(os.environ["APP_PORT"])
 reload = bool(os.environ["RELOAD"])
 
+version = titiler.core.__version__
 
 app = FastAPI(
     title="Overstory Titiler Server",
-    description=f"Dynamic tile-server for Overstory built on Titiler Core version {titiler.core.__version__}.",
-    version=f"{titiler.core.__version__}"
+    description=f"Dynamic tile-server for Overstory built on `titiler.core` v{version}.",
+    version=f"{version}"
 )
 
 cog = TilerFactory()
