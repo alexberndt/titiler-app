@@ -1,0 +1,22 @@
+version: '3'
+services:
+  titiler-api:
+    container_name: titiler-api-container
+    image: titiler-api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    environment:
+      - APP_HOST=0.0.0.0
+      - APP_PORT=8082
+      - RELOAD=false
+    ports:
+      - "8082:8082"
+    volumes:
+      - ./scripts:/app/scripts
+    command: bash -c "./startup.sh"
+
+networks:
+  default:
+    name: titiler-api-overstory-network

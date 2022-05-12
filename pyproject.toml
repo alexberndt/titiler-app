@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "titiler-api"
+version = "0.5.1"
+description = "Titiler API for dynamic tile serving."
+authors = ["Alex Berndt <alexander@overstory.ai>"]
+
+[tool.poetry.dependencies]
+python = "3.9.7"
+titiler = "^0.5.1"
+uvicorn = "^0.17.6"
+
+[tool.poetry.dev-dependencies]
+pytest = "7.0.1"
+pre-commit = "2.17.0"
+black = "22.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
